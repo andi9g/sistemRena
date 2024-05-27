@@ -43,6 +43,7 @@ class Bendahara extends Migration
             $table->integer('idpemasukan');
             $table->String('idwarga');
             $table->String('bulan');
+            $table->String('tahun');
             $table->date('tanggal');
             $table->double('jumlahbayar');
             $table->enum('keterangan', ['lunas', 'belum lunas']);
