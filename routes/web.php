@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get("login", "Auth\LoginController@showLoginForm");
 Route::post("login", "Auth\LoginController@login")->name("login");
-
+Route::get("/", function() {
+    return redirect('login');
+});
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', 'HomeController@index');
