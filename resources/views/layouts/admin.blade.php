@@ -129,6 +129,14 @@
 								><span class="mtext">DATA PENGELUARAN</span>
 							</a>
 						</li>
+                        <li>
+							<a href="{{ url('laporan', []) }}" class="dropdown-toggle no-arrow @yield('activelaporan')">
+								<span class="micon fa fa-copy"></span
+								><span class="mtext">LAPORAN</span>
+							</a>
+						</li>
+
+
 
 
 					</ul>
