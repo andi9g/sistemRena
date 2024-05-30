@@ -185,6 +185,7 @@
 
             <div class="row p-0">
                 <div class="col-md-6">
+                    <h3>{{ $tahun }}</h3>
                 </div>
                 <div class="col-md-6 ">
                     <form action="#pencarian" method="GET">
@@ -219,7 +220,7 @@
                             <td>{{ $item->blokrumah }}</td>
                             <td>
                                 @php
-                                    $jml = DB::table('kas')->where("tahun", date("Y"))->where("idwarga", $item->idwarga)->count();
+                                    $jml = DB::table('kas')->where("tahun", $tahun)->where("idwarga", $item->idwarga)->count();
                                 @endphp
                                 {{ $jml }} Kali Pembayaran
                             </td>
@@ -297,8 +298,7 @@
 <div class="jumbotron mt-5">
     <div class="container">
         <h1 class="display-4">Contact Us</h1>
-        <p class="lead">Terimakasih sudah.......... untuk informasi dan bantuan lainnya bisa hubungi
-            bendahara blealdmlmlmealrmlaemrlaemrlaelreanran,af</p>
+        <p class="lead"></p>
         <hr class="my-4">
         <a href="https://wa.me/+620895600285742" class="btn btn-success px-5">
             WA +620895600285742

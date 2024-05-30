@@ -79,12 +79,12 @@ class HomeController extends Controller
 
 
         if($tahun == "keseluruhan") {
-            $pemasukan = pemasukanM::orderBy('idpemasukan', 'desc')->paginate(15);
+            $pemasukan = pemasukanM::orderBy('created_at', 'desc')->paginate(15);
             $pemasukanKas = pemasukanM::where("jenispemasukan", "kas")->get();
             $pemasukanTambahan = pemasukanM::where("jenispemasukan", "tambahan")->get();
             $pemasukanPengeluaran = pemasukanM::where("jenispemasukan", "pengeluaran")->get();
         }else {
-            $pemasukan = pemasukanM::orderBy('idpemasukan', 'desc')->where("tanggal", "like", "$tahun%")->paginate(15);
+            $pemasukan = pemasukanM::orderBy('created_at', 'desc')->where("tanggal", "like", "$tahun%")->paginate(15);
             $pemasukanKas = pemasukanM::where("tanggal", "like", "$tahun%")
             ->where("jenispemasukan", "kas")
             ->get();
