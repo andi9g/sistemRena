@@ -28,16 +28,16 @@
 
         @include('layouts.header')
 
-        
+
     </head>
     <body class="login-page">
-        
+
         <div
             class="login-wrap d-flex align-items-center flex-wrap justify-content-center">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-6 col-lg-7">
-                        <img src="vendors/images/login-page-img.png" alt=""/>
+                        <img src="{{ url('gambar', ['logo.jpeg']) }}" class="rounded-circle" alt=""/>
                     </div>
                     <div class="col-md-6 col-lg-5">
                         @yield('content')
