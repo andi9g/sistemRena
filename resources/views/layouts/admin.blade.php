@@ -4,7 +4,7 @@
 		<!-- Basic Page Info -->
 		<meta charset="utf-8" />
 		<title>
-
+            KAS POKEL
     </title>
     <style>
       th td {
@@ -83,13 +83,13 @@
 		<div class="left-side-bar bg-secondary">
 			<div class="brand-logo">
 				<a href="index.html">
-					<img src="vendors/images/deskapp-logo.svg" alt="" class="dark-logo" />
+					<img src="{{ url('gambar', ['logo.jpeg']) }}" alt="" class="dark-logo" />
 					<img
-						src="{{ url('gambar', ['user.png']) }}"
+						src="{{ url('gambar', ['logo.jpeg']) }}"
 						width="40px"
-						class="light-logo mr-2"
+						class="light-logo mr-2 rounded-circle"
 					/>
-                    Nama Aplikasi
+                    KAS POKEL
 				</a>
 				<div class="close-sidebar" data-toggle="left-sidebar-close">
 					<i class="ion-close-round"></i>
@@ -130,12 +130,7 @@
 							</a>
 						</li>
 
-						<li>
-							<a href="calendar.html" class="dropdown-toggle no-arrow">
-								<span class="micon bi bi-calendar4-week"></span
-								><span class="mtext">Calendar</span>
-							</a>
-						</li>
+
 					</ul>
 				</div>
 			</div>
