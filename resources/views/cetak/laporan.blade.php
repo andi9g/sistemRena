@@ -51,7 +51,7 @@
         <tr>
             <td>Priode</td>
             <td>&emsp;&emsp;:&nbsp;</td>
-            <td>{{ \Carbon\Carbon::parse($tanggalawal)->isoFormat("DD MMMM Y"). "s.d ".\Carbon\Carbon::parse($tanggalakhir)->isoFormat("DD MMMM Y") }}</td>
+            <td>{{ \Carbon\Carbon::parse($tanggalawal)->isoFormat("DD MMMM Y"). " s.d ".\Carbon\Carbon::parse($tanggalakhir)->isoFormat("DD MMMM Y") }}</td>
         </tr>
     </table>
 
