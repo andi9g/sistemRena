@@ -3,7 +3,10 @@
 @section('content')
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container py-2">
-        <a class="navbar-brand text-bold" href="#"><b>Perumahan Pondok Kelapa Tanjungpinang</b></a>
+        <a class="navbar-brand" href="#">
+            <img src="{{ url('gambar', ['logo.jpeg']) }}" width="30" height="30" class="d-inline-block align-top rounded-circle mr-3" alt="">
+            PONDOK KELAPA
+          </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -15,7 +18,7 @@
             </ul>
             <form class="form-inline my-2 my-lg-0">
             {{-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> --}}
-            <a href="{{ url('login', []) }}" class="badge badge-btn badge-secondary my-2 my-sm-0 text-light" >LOGIN</a>
+                <a href="{{ url('login', []) }}" class="badge badge-btn badge-secondary my-2 my-sm-0 text-light" >LOGIN</a>
             </form>
         </div>
 
