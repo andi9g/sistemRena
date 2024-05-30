@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="input-group custom">
-            <input 
+            <input
                 value="{{ old('password') }}"
                 name="password"
                 type="password"
@@ -41,12 +41,16 @@
                   type="submit" value="Sign In"> -->
                   <button type="submit" class="btn btn-primary btn-lg btn-block">Sign In</a >
               </div>
-              
+
+
           </div>
-            
+          <div class="col-sm-12 mt-3">
+            <a href="{{ url('/', []) }}" class="btn btn-block btn-success">HALAMAN UTAMA</a>
+          </div>
+
         </div>
         <div class="row">
-            
+
         </div>
     </form>
 </div>
