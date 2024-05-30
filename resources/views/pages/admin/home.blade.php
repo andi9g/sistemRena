@@ -78,9 +78,9 @@
 <div class="row">
     <div class="col-md-8"><h5>HISTORI PEMASUKAN / PENGELUARAN</h5></div>
     <div class="col-md-4">
-            <div class='form-group'>
-                <input type='text' name='tahun' id='fortahun' class='form-control tahun' value="{{ $tahun }}">
-            </div>
+        <div class='form-group'>
+            <input type='text' name='tahun' id='fortahun' class='form-control tahun' value="{{ $tahun }}">
+        </div>
     </div>
 </div>
 <div class="table-responsive">

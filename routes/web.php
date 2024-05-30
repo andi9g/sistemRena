@@ -35,6 +35,9 @@ Route::middleware(['auth'])->group(function () {
     Route::resource("tambahan", "tambahanC");
     Route::resource("pengeluaran", "pengeluaranC");
 
+    Route::get("laporan", "laporanC@index");
+    Route::get("cetak/laporan", "laporanC@cetak")->name("cetak.laporan");
+
 
 });
 
