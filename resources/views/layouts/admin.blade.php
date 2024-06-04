@@ -98,6 +98,7 @@
 			<div class="menu-block customscroll">
 				<div class="sidebar-menu">
 					<ul id="accordion-menu">
+                        @if (Auth::user()->posisi == "superadmin")
                         <li>
 							<a href="{{ url('home', []) }}" class="dropdown-toggle no-arrow @yield('activehome')">
 								<span class="micon bi bi-house"></span
@@ -129,6 +130,15 @@
 								><span class="mtext">DATA PENGELUARAN</span>
 							</a>
 						</li>
+                        <li>
+							<a href="{{ url('ketuart', []) }}" class="dropdown-toggle no-arrow @yield('activeketuart')">
+								<span class="micon fa fa-user"></span
+								><span class="mtext">KETUA RT</span>
+							</a>
+						</li>
+
+                        @endif
+
                         <li>
 							<a href="{{ url('laporan', []) }}" class="dropdown-toggle no-arrow @yield('activelaporan')">
 								<span class="micon fa fa-copy"></span
