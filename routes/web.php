@@ -18,9 +18,9 @@ Route::get("login", "Auth\LoginController@showLoginForm");
 Route::post("login", "Auth\LoginController@login")->name("login");
 
 Route::middleware(['auth'])->group(function () {
+    Route::get('/home', 'HomeController@index');
 
     Route::middleware(['gerbangAdmin'])->group(function () {
-        Route::get('/home', 'HomeController@index');
 
         Route::resource('ketuart', "ketuartC");
         Route::post("resetpassword/{iduser}/ketuart", "ketuartC@resetpassword")->name("resetpassword.ketuart");

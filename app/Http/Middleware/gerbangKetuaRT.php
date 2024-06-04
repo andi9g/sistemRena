@@ -21,7 +21,7 @@ class gerbangKetuaRT
         if($posisi == "superadmin" || $posisi == "admin") {
             return $next($request);
         }else {
-            return redirect()->back()->with('error', 'Terjadi kesalahan');
+            return "error";
         }
     }
 }

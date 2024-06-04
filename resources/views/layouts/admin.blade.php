@@ -98,13 +98,13 @@
 			<div class="menu-block customscroll">
 				<div class="sidebar-menu">
 					<ul id="accordion-menu">
-                        @if (Auth::user()->posisi == "superadmin")
                         <li>
 							<a href="{{ url('home', []) }}" class="dropdown-toggle no-arrow @yield('activehome')">
 								<span class="micon bi bi-house"></span
 								><span class="mtext">DASHBOARD</span>
 							</a>
 						</li>
+                        @if (Auth::user()->posisi == "superadmin")
                         <li>
 							<a href="{{ url('warga', []) }}" class="dropdown-toggle no-arrow @yield('activewarga')">
 								<span class="micon fa fa-users"></span
