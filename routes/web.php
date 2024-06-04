@@ -19,19 +19,19 @@ Route::post("login", "Auth\LoginController@login")->name("login");
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', 'HomeController@index');
+    //logout
+    Route::post("logout", "Auth\LoginController@logout")->name("logout");
+    //profil
+    Route::get('profil', "profilC@index");
+    Route::post('profil/ubahnama', "profilC@ubahnama")->name("ubah.nama");
+    Route::post('profil/ubahpassword', "profilC@ubahpassword")->name("ubah.password");
+    Route::post('profil/ubahgambar', "profilC@ubahgambar")->name("ubah.gambar");
 
     Route::middleware(['gerbangAdmin'])->group(function () {
 
         Route::resource('ketuart', "ketuartC");
         Route::post("resetpassword/{iduser}/ketuart", "ketuartC@resetpassword")->name("resetpassword.ketuart");
 
-        //logout
-        Route::post("logout", "Auth\LoginController@logout")->name("logout");
-        //profil
-        Route::get('profil', "profilC@index");
-        Route::post('profil/ubahnama', "profilC@ubahnama")->name("ubah.nama");
-        Route::post('profil/ubahpassword', "profilC@ubahpassword")->name("ubah.password");
-        Route::post('profil/ubahgambar', "profilC@ubahgambar")->name("ubah.gambar");
 
 
         Route::resource("warga", "wargaC");
