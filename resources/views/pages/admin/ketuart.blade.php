@@ -3,7 +3,7 @@
 
 @section('activeketuart', 'active')
 
-@section('judul', "Data Warga")
+@section('judul', "Data Ketua RT")
 
 
 @section('content')
@@ -11,7 +11,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="tambah-ketuart">Form Tambah Warga</h5>
+                <h5 class="modal-title" id="tambah-ketuart">Form Tambah Ketua RT</h5>
                 <button class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -63,7 +63,7 @@
             <thead>
                 <tr>
                     <th width="5px">No</th>
-                    <th>Nama Warga</th>
+                    <th>Nama Ketua RT</th>
                     <th>Username</th>
                     <th>Password</th>
                     <th>Action</th>
