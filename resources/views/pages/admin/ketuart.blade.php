@@ -42,7 +42,7 @@
     <div class="row p-0">
         <div class="col-md-6">
             <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#tambahketuart">
-                <b>TAMBAH WARGA</b>
+                <b>TAMBAH KETUA RT</b>
             </button>
         </div>
         <div class="col-md-6 ">
