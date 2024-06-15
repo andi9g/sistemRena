@@ -62,17 +62,48 @@ class pengeluaranC extends Controller
 
         try{
 
-            $data = $request->all();
 
-            $pemasukan = pemasukanM::create([
-                "jenispemasukan" => "pengeluaran",
-                "tanggal" => $request->tanggal,
-            ]);
+            $pemasukanKas = pemasukanM::where("jenispemasukan", "kas")->get();
+            $pemasukanTambahan = pemasukanM::where("jenispemasukan", "tambahan")->get();
+            $pemasukanPengeluaran = pemasukanM::where("jenispemasukan", "pengeluaran")->get();
 
-            $data["idpemasukan"] = $pemasukan->idpemasukan;
 
-            pengeluaranM::create($data);
-            return redirect()->back()->with('success', 'Success');
+
+            $kas = 0;
+            $tambahan = 0;
+            $pengeluaran = 0;
+
+            foreach ($pemasukanKas as $pk) {
+                $kas = $kas + $pk->kas->jumlahbayar;
+            }
+
+            foreach ($pemasukanTambahan as $pt) {
+                $tambahan = $tambahan + $pt->tambahan->jumlahbayar;
+            }
+            foreach ($pemasukanPengeluaran as $pp) {
+                $pengeluaran = $pengeluaran + $pp->pengeluaran->jumlahkeluar;
+            }
+
+            $totalkeuangan = $kas + $tambahan - $pengeluaran;
+
+            if($totalkeuangan <= $request->jumlahkeluar) {
+
+                $data = $request->all();
+
+                $pemasukan = pemasukanM::create([
+                    "jenispemasukan" => "pengeluaran",
+                    "tanggal" => $request->tanggal,
+                ]);
+
+                $data["idpemasukan"] = $pemasukan->idpemasukan;
+
+                pengeluaranM::create($data);
+                return redirect()->back()->with('success', 'Success');
+            }else {
+                return redirect()->back()->with('toast_error', 'Maaf jumlah uang kurang');
+
+            }
+
 
         }catch(\Throwable $th){
             return redirect()->back()->with('toast_error', 'Terjadi kesalahan');
