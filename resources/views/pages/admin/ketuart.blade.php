@@ -84,9 +84,13 @@
                         @endif
                     </td>
                     <td nowrap>
-                        <a href="{{ route('ketuart.destroy', [$item->iduser]) }}" class="badge badge-danger badge-btn border-0" data-confirm-delete="true">
-                            <i class="fa fa-trash"></i> Hapus
-                        </a>
+                        <form action='{{ route('ketuart.destroy', [$item->iduser]) }}' method='post' class='d-inline'>
+                             @csrf
+                             @method('DELETE')
+                             <button type='submit' onclick="return confirm('Yakin ingin dihapus?')" class='badge badge-danger badge-btn border-0'>
+                                 button
+                             </button>
+                        </form>
 
                         <button class="badge badge-info badge-btn border-0" type="button" data-toggle="modal" data-target="#ubahdata{{ $item->iduser }}">
                             <i class="fa fa-edit"></i> Ubah
