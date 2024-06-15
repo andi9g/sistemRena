@@ -86,7 +86,7 @@ class pengeluaranC extends Controller
 
             $totalkeuangan = $kas + $tambahan - $pengeluaran;
 
-            if($totalkeuangan <= $request->jumlahkeluar) {
+            if($request->jumlahkeluar <= $totalkeuangan ) {
 
                 $data = $request->all();
 
