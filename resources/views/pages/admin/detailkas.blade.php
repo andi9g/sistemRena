@@ -66,7 +66,7 @@
 
                         <div class="form-group">
                             <label for="jumlah">Jumlah Pembayaran</label>
-                            <input id="jumlah" class="form-control" type="number" name="jumlahbayar">
+                            <input id="jumlah" class="form-control" type="number" value="15000" name="jumlahbayar">
                         </div>
 
                         <div class="form-group">

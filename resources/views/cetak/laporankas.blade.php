@@ -46,12 +46,12 @@
         <tr>
             <td>Hal</td>
             <td>:</td>
-            <td>Laporan {{ $keterangan }}</td>
+            <td>Laporan KAS Warga</td>
         </tr>
         <tr>
             <td>Priode</td>
             <td>&emsp;&emsp;:&nbsp;</td>
-            <td>{{ \Carbon\Carbon::parse($tanggalawal)->isoFormat("DD MMMM Y"). " s.d ".\Carbon\Carbon::parse($tanggalakhir)->isoFormat("DD MMMM Y") }}</td>
+            <td>{{ \Carbon\Carbon::parse($bulan)->isoFormat("MMMM")." (".\Carbon\Carbon::parse($bulan)->isoFormat("Y").")" }}</td>
         </tr>
     </table>
 
@@ -63,9 +63,9 @@
         <thead>
             <tr>
                 <th width="5px">No</th>
-                <th>Tanggal</th>
-                <th>Pemasukan</th>
-                <th>Pengeluaran</th>
+                <th>Nama Warga</th>
+                <th>Blok Rumah</th>
+                <th>Status Pembayaran</th>
             </tr>
         </thead>
 
@@ -77,24 +77,33 @@
             @foreach ($data as $item)
             <tr>
                 <td align="center">{{ $loop->iteration}}</td>
-                <td>{{ \Carbon\Carbon::parse($item["tanggal"])->isoFormat("DD MMMM Y") }}</td>
+                <td>{{ $item["namawarga"] }}</td>
                 <td>
-                    Rp{{ number_format($item["pemasukan"],0,",",".") }}
+                    {{ $item["blokrumah"] }}
                 </td>
                 <td>
-                    Rp{{ number_format($item["pengeluaran"],0,",",".") }}
+                    <b>
+                        @if ($item["status"] == 1)
+                            <font style="color:green">LUNAS</font>
+                        @else
+                            <font style="color:red">BELUM LUNAS</font>
+                        @endif
+                    </b>
                 </td>
             </tr>
             @endforeach
         </tbody>
         <tfoot>
             <tr>
-                <th colspan="2">TOTAL KESELURUHAN</th>
+                <th colspan="3">TELAH LUNAS</th>
                 <th >
-                    Rp{{ number_format($data->sum("pemasukan"),0,",",".") }}
+                    {{ $lunas }}
                 </th>
+            </tr>
+            <tr>
+                <th colspan="3">BELUM LUNAS</th>
                 <th >
-                    Rp{{ number_format($data->sum("pengeluaran"),0,",",".") }}
+                    {{ $belumlunas }}
                 </th>
             </tr>
         </tfoot>

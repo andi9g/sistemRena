@@ -139,11 +139,15 @@
 
                         @endif
 
-                        <li>
-							<a href="{{ url('laporan', []) }}" class="dropdown-toggle no-arrow @yield('activelaporan')">
+                        <li class="dropdown">
+							<a href="javascript:;" class="dropdown-toggle">
 								<span class="micon fa fa-copy"></span
 								><span class="mtext">LAPORAN</span>
 							</a>
+							<ul class="submenu">
+								<li><a href="{{ url('laporan', []) }}" class="@yield('activelaporan')">LAPORAN KEUANGAN</a></li>
+								<li><a href="{{ url('laporankas', []) }}" class="@yield('activelaporankas')">LAPORAN KAS</a></li>
+							</ul>
 						</li>
 
 

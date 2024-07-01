@@ -26,6 +26,7 @@ class Bendahara extends Migration
 
         Schema::create('warga', function (Blueprint $table) {
             $table->bigIncrements('idwarga');
+            $table->char('nik', 17)->unique();
             $table->String('namawarga');
             $table->String('blokrumah');
             $table->timestamps();

@@ -54,6 +54,7 @@ class wargaC extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'nik'=>'required|unique:warga,nik',
             'namawarga'=>'required',
             'blokrumah'=>'required',
         ]);

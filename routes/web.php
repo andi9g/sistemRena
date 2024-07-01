@@ -44,6 +44,10 @@ Route::middleware(['auth'])->group(function () {
     Route::middleware(['gerbangKetuaRT'])->group(function () {
         Route::get("laporan", "laporanC@index");
         Route::get("cetak/laporan", "laporanC@cetak")->name("cetak.laporan");
+
+        //laporankas
+        Route::get("laporankas", "laporanC@laporankas");
+        Route::get("cetak/laporankas", "laporanC@cetaklaporankas")->name("cetak.laporankas");
     });
 
 

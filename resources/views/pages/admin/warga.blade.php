@@ -20,12 +20,16 @@
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
+                        <label for="nik">NIK</label>
+                        <input id="nik" class="form-control" type="number" placeholder="masukan nik" name="nik">
+                    </div>
+                    <div class="form-group">
                         <label for="namawarga">Nama Warga</label>
                         <input id="namawarga" class="form-control" type="text" placeholder="masukan nama lengkap" name="namawarga">
                     </div>
                     <div class="form-group">
                         <label for="blok">Blok Rumah</label>
-                        <input id="blok" class="form-control" type="text" placeholder="masukan nama lengkap" name="blokrumah">
+                        <input id="blok" class="form-control" type="text" placeholder="masukan blok rumah" name="blokrumah">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -59,6 +63,7 @@
             <thead>
                 <tr>
                     <th width="5px">No</th>
+                    <th>NIK</th>
                     <th>Nama Warga</th>
                     <th>Blok Rumah</th>
                     <th>Action</th>
@@ -69,6 +74,7 @@
                 @foreach ($warga as $item)
                 <tr>
                     <td>{{ $loop->iteration + $warga->firstItem() - 1 }}</td>
+                    <td>{{ $item->nik }}</td>
                     <td>{{ $item->namawarga }}</td>
                     <td>{{ $item->blokrumah }}</td>
                     <td nowrap>
@@ -96,12 +102,16 @@
                                 @method('PUT')
                                 <div class="modal-body">
                                     <div class="form-group">
+                                        <label for="nik">NIK</label>
+                                        <input id="nik" class="form-control" readonly type="number" value="{{ $item->nik }}" placeholder="masukan nik" name="nik">
+                                    </div>
+                                    <div class="form-group">
                                         <label for="namawarga">Nama Warga</label>
                                         <input id="namawarga" class="form-control" type="text" value="{{ $item->namawarga }}" placeholder="masukan nama lengkap" name="namawarga">
                                     </div>
                                     <div class="form-group">
                                         <label for="blok">Blok Rumah</label>
-                                        <input id="blok" class="form-control" type="text" placeholder="masukan nama lengkap" value="{{ $item->blokrumah }}" name="blokrumah">
+                                        <input id="blok" class="form-control" type="text" placeholder="masukan blok rumah" value="{{ $item->blokrumah }}" name="blokrumah">
                                     </div>
                                 </div>
                                 <div class="modal-footer">
