@@ -32,9 +32,9 @@
 
     <table style="border-bottom: 2px double rgb(63, 63, 63);padding-bottom: 20px " width="100%">
         <tr>
-            <td width="90px" valign="top">
+            {{-- <td width="90px" valign="top">
                 <img src="{{ url('gambar', ['logo.jpeg']) }}" width="100%" style="border:1px solid lightgrey;box-shadow: 2px 5px 2px darkgrey;border-radius: 50%" alt="">
-            </td>
+            </td> --}}
             <td valign="middle" style="padding-left: 20px">
                 <h1>PONDOK KELAPA</h1>
                 <p>Jl. Kijang Lama, Melayu Kota Piring, Kec. Tanjungpinang Tim., Kota Tanjung Pinang, Kepulauan Riau.</p>
